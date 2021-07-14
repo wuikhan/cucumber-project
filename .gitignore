@@ -1,1 +1,3 @@
 target/*
+reports/*
+reports/html-reports/cucumber-html-reports/*
