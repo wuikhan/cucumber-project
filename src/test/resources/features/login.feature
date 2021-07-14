@@ -9,3 +9,12 @@ Feature: Test the login functionality
     When I click the login button
     Then I should see the dashboard
     And I quit the browser
+
+  Scenario: Using valid credentials I should be able to login2
+    Given I open the browser
+    And I visit the application
+    And I enter valid username
+    And I enter valid password
+    When I click the login button
+    Then I should see the dashboard
+    And I quit the browser
