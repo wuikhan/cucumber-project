@@ -23,6 +23,9 @@
 				<configuration>
 					<includes>
 						<exclude>**/**/*Runner.java</exclude>
+						<exclude>**/**/${Runner}.java</exclude>
+						<name>Runner</name>
+						<value>${Runner}</value>
 					</includes>
 				</configuration>
 			</plugin>
