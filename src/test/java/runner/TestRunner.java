@@ -17,8 +17,7 @@ import cucumber.api.junit.Cucumber;
 				"pretty",
 				 "html:target/cucumber-reports/cucumber-html",
 	             "json:target/cucumber-reports/cucumber.json"
-		},
-		tags= {"@regression"})
+		})
 public class TestRunner {
 	
 
