@@ -22,3 +22,4 @@ Feature: As a user , I should be able to verify and create accounts
       | Partner Referral |
       | Purchased List   |
       | Other            |
+    And I quit the browser
