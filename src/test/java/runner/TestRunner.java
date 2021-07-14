@@ -15,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 		dryRun = false,
 		plugin= {
 				"pretty",
-				 "html:target/cucumber-reports/cucumber.html",
+				 "html:target/cucumber-reports/cucumber-html",
 	             "json:target/cucumber-reports/cucumber.json"
 		}
 		)
