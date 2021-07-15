@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,10 +17,22 @@ public class LoginTest extends BaseClass{
 	
 	@Given("^I open the browser$")
 	public void i_open_the_browser() {
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\Waqas Khan\\Desktop\\selenium files\\chromedriver\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		String osname = System.getProperty("os.name");
+		System.out.println(osname);
+		
+		if(osname.equalsIgnoreCase("Windows 10")) {
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir")+"/driver/chromedriver.exe");
+			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		} else {
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir")+"/driver/chromedriver");
+			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		}
+		
 	}
 
 	@Given("^I visit the application$") // ken is working on this
