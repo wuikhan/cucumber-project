@@ -28,7 +28,7 @@ public class LoginTest extends BaseClass{
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		} else {
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir")+"/driver/chromedriver");
+					System.getProperty("user.dir")+"/driver/mac/chromedriver");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}
