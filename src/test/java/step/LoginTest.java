@@ -33,7 +33,7 @@ public class LoginTest extends BaseClass {
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		} else if (osname.equalsIgnoreCase("Linux")) {
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "/driver/windows/chromedriver.exe");
+					System.getProperty("user.dir") + "/driver/linux/chromedriver");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("headless");
 			driver = new ChromeDriver(options);
