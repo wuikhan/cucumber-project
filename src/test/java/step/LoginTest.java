@@ -26,16 +26,16 @@ public class LoginTest extends BaseClass {
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		} else if (osname.equalsIgnoreCase("Mac OS X")) {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/mac/chromedriver3");
+			System.setProperty("webdriver.chrome.driver", 
+					System.getProperty("user.dir") + "/driver/mac/chromedriver3");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		} else if (osname.equalsIgnoreCase("Linux")) {
-			System.setProperty("phantomjs.binary.path",
-					System.getProperty("user.dir") + "/driver/phantomjs/phantomjs");
-			driver = new PhantomJSDriver();
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir") + "/driver/windows/chromedriver.exe");
+			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}
-
 	}
 
 	@Given("^I visit the application$") // ken is working on this
