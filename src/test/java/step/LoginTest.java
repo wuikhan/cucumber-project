@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -33,7 +34,9 @@ public class LoginTest extends BaseClass {
 		} else if (osname.equalsIgnoreCase("Linux")) {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "/driver/windows/chromedriver.exe");
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("headless");
+			driver = new ChromeDriver(options);
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}
 	}
