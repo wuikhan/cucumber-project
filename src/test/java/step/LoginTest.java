@@ -31,7 +31,7 @@ public class LoginTest extends BaseClass {
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		} else if (osname.equalsIgnoreCase("Linux")) {
 			System.setProperty("phantomjs.binary.path",
-					System.getProperty("user.dir") + "/drivers/phantomjs/phantomjs");
+					System.getProperty("user.dir") + "/driver/phantomjs/phantomjs");
 			driver = new PhantomJSDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}
