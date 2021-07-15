@@ -5,37 +5,37 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+public class LoginTest extends BaseClass {
 
-
-public class LoginTest extends BaseClass{
-	
 	@Given("^I open the browser$")
 	public void i_open_the_browser() {
-		
+
 		String osname = System.getProperty("os.name");
 		System.out.println(osname);
-		
-		if(osname.equalsIgnoreCase("Windows 10")) {
+
+		if (osname.equalsIgnoreCase("Windows 10")) {
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir")+"/driver/windows/chromedriver.exe");
+					System.getProperty("user.dir") + "/driver/windows/chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		} else if(osname.equalsIgnoreCase("Mac OS X")) {
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir")+"/driver/mac/chromedriver3");
+		} else if (osname.equalsIgnoreCase("Mac OS X")) {
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/mac/chromedriver3");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		} else if (osname.equalsIgnoreCase("Linux")) {
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir")+"/driver/linux/chromedriver");
-			driver = new ChromeDriver();
+			System.setProperty("phantomjs.binary.path",
+					System.getProperty("user.dir") + "/drivers/phantomjs/phantomjs");
+			driver = new PhantomJSDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}
-		
+
 	}
 
 	@Given("^I visit the application$") // ken is working on this
@@ -43,7 +43,7 @@ public class LoginTest extends BaseClass{
 		driver.get("https://login.salesforce.com");
 	}
 
-	@Given("^I enter valid username$") 
+	@Given("^I enter valid username$")
 	public void i_enter_valid_username() {
 		driver.findElement(By.id("username")).sendKeys("test.user@gmail.com.test");
 	}
@@ -63,10 +63,10 @@ public class LoginTest extends BaseClass{
 		boolean homePage = driver.findElement(By.xpath("//a[@title='Home Tab - Selected']")).isDisplayed();
 		Assert.assertTrue(homePage);
 	}
-	
+
 	@Then("^I quit the browser$")
 	public void i_quit_the_browser() throws Throwable {
-	    driver.quit();
+		driver.quit();
 	}
 
 }

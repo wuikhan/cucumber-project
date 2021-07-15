@@ -80,5 +80,14 @@
 			<version>1.2.5</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.detro/ghostdriver -->
+		<!-- https://mvnrepository.com/artifact/com.codeborne/phantomjsdriver -->
+<dependency>
+    <groupId>com.codeborne</groupId>
+    <artifactId>phantomjsdriver</artifactId>
+    <version>1.4.1</version>
+</dependency>
+
+
 	</dependencies>
 </project>
