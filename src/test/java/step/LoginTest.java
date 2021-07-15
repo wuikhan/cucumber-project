@@ -33,9 +33,10 @@ public class LoginTest extends BaseClass {
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		} else if (osname.equalsIgnoreCase("Linux")) {
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "/driver/linux/chromedriver");
+					 "/usr/bin/chromedriver");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("headless");
+			options.addArguments("disable-gpu");
 			driver = new ChromeDriver(options);
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}
