@@ -5,8 +5,6 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -26,9 +24,9 @@ public class LoginTest extends BaseClass{
 					System.getProperty("user.dir")+"/driver/chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		} else {
+		} else if(osname.equalsIgnoreCase("Mac OS X")) {
 			System.setProperty("webdriver.chrome.driver",
-					"/cucumber.project/driver/mac/chromedriver");
+					System.getProperty("user.dir")+"/driver/mac/chromedriver3");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}

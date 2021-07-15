@@ -1,3 +1,7 @@
 target/*
 reports/*
 reports/html-reports/cucumber-html-reports/*
+/target/
+.DS_Store
+driver/.DS_Store
+driver/mac/.DS_Store
