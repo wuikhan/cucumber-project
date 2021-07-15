@@ -21,12 +21,17 @@ public class LoginTest extends BaseClass{
 		
 		if(osname.equalsIgnoreCase("Windows 10")) {
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir")+"/driver/chromedriver.exe");
+					System.getProperty("user.dir")+"/driver/windows/chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		} else if(osname.equalsIgnoreCase("Mac OS X")) {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir")+"/driver/mac/chromedriver3");
+			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		} else if (osname.equalsIgnoreCase("Linux")) {
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir")+"/driver/mac/linux/chromedriver");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}
