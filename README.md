@@ -10,7 +10,7 @@ Steps to use:
 * get the path of the project.
 * using terminal go to the project
 * run
-* * mvn clean verify -DRunner="TestRunner
+  * mvn clean verify -DRunner="TestRunner
 
 Configured for AWS - just create an aws instance setup Jenkins and specify the path to the repo.<br> 😊
 
