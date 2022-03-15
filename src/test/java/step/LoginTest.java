@@ -49,12 +49,12 @@ public class LoginTest extends BaseClass {
 
 	@Given("^I enter valid username$")
 	public void i_enter_valid_username() {
-		driver.findElement(By.id("username")).sendKeys("test.user@gmail.com.test");
+		driver.findElement(By.id("username")).sendKeys("batch06@codegator.us.qa");
 	}
 
 	@Given("^I enter valid password$")
 	public void i_enter_valid_password() {
-		driver.findElement(By.id("password")).sendKeys("Welcome2");
+		driver.findElement(By.id("password")).sendKeys("Welcome1");
 	}
 
 	@When("^I click the login button$")
